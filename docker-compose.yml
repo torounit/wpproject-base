@@ -2,7 +2,7 @@ version: "3"
 services:
   nginx:
     shm_size: 64mb
-    image: nginx:1-alpine
+    image: nginx:stable-alpine
     depends_on:
     - wordpress
     ports:
@@ -18,7 +18,7 @@ services:
   #
   wordpress:
     shm_size: 256mb
-    image: wordpress:php7.2-fpm-alpine
+    image: wordpress:fpm-alpine
     depends_on:
       - mysql
     environment:
@@ -63,14 +63,14 @@ services:
     - ./htdocs/wp-content:/var/www/html/wp-content
     - ./:/home/www-data/app
 
-#  composer:
-#    image: composer:1
-#    command: "composer install"
-#    working_dir: /app
-#    volumes:
-#      - wordpress:/var/www/html
-#      - ./htdocs/wp-content:/var/www/html/wp-content
-#      - ./:/app
+  composer:
+    image: composer:1
+    command: "composer install"
+    working_dir: /app
+    volumes:
+      - wordpress:/var/www/html
+      - ./htdocs/wp-content:/var/www/html/wp-content
+      - ./:/app
 #
 #  node:
 #    image: node:10.13

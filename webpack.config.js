@@ -110,44 +110,30 @@ module.exports = [
 		...config,
 		...{
 			entry: {
-				main: [ './htdocs/wp-content/mu-plugins/age-gate/src/index.js' ],
+				main: [ './htdocs/wp-content/mu-plugins/block-library/src/index.js' ],
 			},
 			output: {
 				library: [ 'wp', '[name]' ],
 				libraryTarget: 'window',
-				path: __dirname + '/htdocs/wp-content/mu-plugins/age-gate/dist',
-				publicPath: '/wp-content/mu-plugins/age-gate/dist/',
+				path: __dirname + '/htdocs/wp-content/mu-plugins/block-library/dist',
+				publicPath: '/wp-content/mu-plugins/block-library/dist/',
 			},
 		},
 	},
-	{
-		...config,
-		...{
-			entry: {
-				main: [ './htdocs/wp-content/mu-plugins/blocks/src/index.js' ],
-			},
-			output: {
-				library: [ 'wp', '[name]' ],
-				libraryTarget: 'window',
-				path: __dirname + '/htdocs/wp-content/mu-plugins/blocks/dist',
-				publicPath: '/wp-content/mu-plugins/blocks/dist/',
-			},
-		},
-	},
-	{
-		...config,
-		...{
-			entry: {
-				main: [ `./htdocs/wp-content/themes/${ theme }/src/js/index.js` ],
-			},
-			output: {
-				library: [ 'wp', '[name]' ],
-				libraryTarget: 'window',
-				path: __dirname + `/htdocs/wp-content/themes/${ theme }/dist/js`,
-				publicPath: `/wp-content/themes/${ theme }/dist/js/`,
-			},
-
-		},
-	},
+	// {
+	// 	...config,
+	// 	...{
+	// 		entry: {
+	// 			main: [ `./htdocs/wp-content/themes/${ theme }/src/js/index.js` ],
+	// 		},
+	// 		output: {
+	// 			library: [ 'wp', '[name]' ],
+	// 			libraryTarget: 'window',
+	// 			path: __dirname + `/htdocs/wp-content/themes/${ theme }/dist/js`,
+	// 			publicPath: `/wp-content/themes/${ theme }/dist/js/`,
+	// 		},
+	//
+	// 	},
+	// },
 ];
 

@@ -13,4 +13,8 @@ ENV=${ROOT}/.env
 # override variables.
 eval "$(cat ${ENV} <(echo) <(declare -x))"
 
-node_modules/.bin/postcss ./htdocs/wp-content/themes/${WP_THEME}/src/css/[^_]*.css --dir ./htdocs/wp-content/themes/${WP_THEME}/dist/css --verbose
+if [ -d ./htdocs/wp-content/themes/${WP_THEME}/src/css ]; then
+	node_modules/.bin/postcss ./htdocs/wp-content/themes/${WP_THEME}/src/css/[^_]*.css --dir ./htdocs/wp-content/themes/${WP_THEME}/dist/css --verbose
+fi
+
+
